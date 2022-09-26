@@ -13,13 +13,13 @@ file : db_auth_golang
 
 # Input postman body raw
 {
-     "username" : "username"
+     "username" : "username",
      "password" : "hallo"
 }
 
 # Output
 {
-    "message" : "success"
+    "message" : "success",
     "token" : "jnbknkjawbdkawndkawndanjkasdnjkasndnasjas"
 }
 
