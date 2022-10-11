@@ -3,9 +3,12 @@ package main
 import (
 	auth "jwt-auth/Controller/Auth"
 	home "jwt-auth/Controller/Home"
+	gmt "jwt-auth/Controller/Services/gmt"
+	weather "jwt-auth/Controller/Services/weather"
 	db "jwt-auth/Db"
 	model "jwt-auth/Model/User"
 	route "jwt-auth/Route"
+
 	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -17,9 +20,13 @@ func main() {
 	model := model.Init(db)
 
 	auth := auth.Init(model)
-	home := home.InitHome()
+	home := home.Init()
 
-	var route = route.Init(auth, home)
+	weather := weather.Init()
+
+	gmt := gmt.Init()
+
+	var route = route.Init(auth, home, weather, gmt)
 
 	http.ListenAndServe(":3000", route.Run())
 

@@ -9,9 +9,10 @@ type LHome struct {
 	Home string
 }
 
-func InitHome() *Home {
+func Init() *Home {
 	return &Home{}
 }
+
 func (h *Home) Index() []byte {
 	lhome := &LHome{}
 	lhome.Home = "halo anda berada di home"
