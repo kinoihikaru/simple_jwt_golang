@@ -19,16 +19,41 @@ url : http://localhost:3000/gmt?city=makassar
 ### Db 
 file : db_auth_golang
 
-# Input postman body raw
+# Input Login postman body raw
 {
      "username" : "username",
      "password" : "hallo"
 }
 
-# Output
+# Output Login
 {
     "message" : "success",
     "token" : "jnbknkjawbdkawndkawndanjkasdnjkasndnasjas"
+}
+
+# Output Cuaca
+{
+    "name":"Makassar",
+    "coord": {
+        "lon": 10.99,
+        "lat": 44.34
+    },
+    "weather": [
+        {
+        "id": 501,
+        "main": "Makassar",
+        "description": "moderate rain",
+        "icon": "10d"
+        }
+    ],
+}
+
+# Output Gmt
+{
+    "id":1643084,
+    "name":"Makassar",
+    "timezone":"1970-01-01T16:00:00+08:00",
+    "cod":200
 }
 
 
